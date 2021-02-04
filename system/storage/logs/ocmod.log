@@ -1,0 +1,128 @@
+2021-02-02 8:31:07 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Tweak for OpenCart 3x
+
+FILE: admin/view/template/common/header.twig
+CODE: {% for link in links %}
+LINE: 36
+CODE: <li><a href="http://www.opencart.com" target="_blank"><i class="fa fa-opencart fa-fw"></i> {{ text_homepage }}</a></li>
+LINE: 67
+CODE: <li><a href="http://docs.opencart.com" target="_blank"><i class="fa fa-file-text-o fa-fw"></i> {{ text_documentation }}</a></li>
+LINE: 70
+CODE: <li><a href="http://forum.opencart.com" target="_blank"><i class="fa fa-comments-o fa-fw"></i> {{ text_support }}</a></li>
+LINE: 73
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="{{ help_sku }}">{{ entry_sku }}</span></label>
+LINE: 104
+CODE: <label class="col-sm-2 control-label" for="input-sku">
+LINE: 110
+CODE: <label class="col-sm-2 control-label" for="input-location">{{ entry_location }}</label>
+LINE: 150
+CODE: <input type="text" name="model" value="{{ model }}" placeholder="{{ entry_model }}" id="input-model" class="form-control"/>
+LINE: 97
+CODE: <li><a href="#tab-recurring" data-toggle="tab">{{ tab_recurring }}</a></li>
+LINE: 32
+
+FILE: admin/controller/common/filemanager.php
+CODE: $this->load->language('common/filemanager');
+LINE: 13
+CODE: // Parent
+LINE: 133
+CODE: $pagination = new Pagination();
+LINE: 194
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: $directory = rtrim(DIR_IMAGE . 'catalog/' . str_replace('*', '', $this->request->get['directory']), '/');
+LINE: 33
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(html_entity_decode($file['name'], ENT_QUOTES, 'UTF-8'));
+LINE: 260
+CODE: $folder = basename(html_entity_decode($this->request->post['folder'], ENT_QUOTES, 'UTF-8'));
+LINE: 340
+
+FILE: admin/view/template/common/filemanager.twig
+CODE: {% for image in images|batch(4) %}
+LINE: 34
+
+FILE: catalog/controller/tool/upload.php
+CODE: public function index() {
+LINE: 10
+CODE: $filename = basename(preg_replace('/[^a-zA-Z0-9\.\-\s+]/', '', html_entity_decode($this->request->files['file']['name'], ENT_QUOTES, 'UTF-8')));
+LINE: 17
+
+FILE: admin/controller/marketplace/extension.php
+CODE: $data['type'] = '';
+LINE: 26
+
+FILE: admin/view/template/marketplace/marketplace_list.twig
+CODE: {% if license.value == filter_license %}<a href="{{ license.href }}" class="btn btn-default active">{{ license.text }}</a>{% else %}<a href="{{ license.href }}" class="btn btn-default">{{ license.text }}</a>{% endif %}
+LINE: 49
+
+FILE: catalog/controller/information/contact.php
+CODE: if (isset($this->error['name'])) {
+LINE: 48
+CODE: $data['comment'] = $this->config->get('config_comment');
+LINE: 106
+CODE: return !$this->error;
+LINE: 205
+
+FILE: catalog/view/theme/default/template/information/contact.twig
+CODE: <div class="row">{{ column_left }}
+LINE: 12
+CODE: <div class="buttons">
+LINE: 154
+CODE: </form>
+LINE: 162
+
+FILE: admin/model/localisation/currency.php
+CODE: public function refresh($force = false) {
+LINE: 107
+CODE: public function getTotalCurrencies() {
+LINE: 205
+
+FILE: admin/controller/extension/extension/promotion.php
+CODE: $curl = curl_init();
+LINE: 6
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: function changeStatus(){
+LINE: 606
+CODE: $('select[name="order_status_id"]').change(function(){
+LINE: 635
+CODE: addOrderInfo();
+LINE: 564
+LINE: 567
+
+FILE: admin/view/template/common/developer.twig
+CODE: <td style="width: 150px;">{{ entry_cache }}</td>
+LINE: 11
+----------------------------------------------------------------
